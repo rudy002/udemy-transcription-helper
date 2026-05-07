@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings - Udemy Transcription Helper</title>
+    <title>Settings — Udemy Transcription Helper</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
     <style>
       * {
         box-sizing: border-box;
@@ -13,126 +17,166 @@
 
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: #0f0f1a;
-        color: #cdd6f4;
+        background: #0d1117;
+        color: #e4e4e7;
         min-height: 100vh;
         display: flex;
         justify-content: center;
-        padding: 40px 20px;
+        padding: 48px 20px;
       }
 
       .container {
         width: 100%;
-        max-width: 620px;
+        max-width: 580px;
       }
 
-      h1 {
-        font-size: 26px;
-        color: #cba6f7;
+      .header {
+        margin-bottom: 36px;
+      }
+      .header-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin-bottom: 6px;
       }
-      .subtitle {
-        color: #6c7086;
-        font-size: 14px;
-        margin-bottom: 32px;
-      }
-
-      .card {
-        background: #1e1e2e;
-        border-radius: 12px;
-        padding: 24px;
-        margin-bottom: 20px;
-        border: 1px solid #313244;
-      }
-
-      .card h2 {
-        font-size: 16px;
-        color: #89b4fa;
-        margin-bottom: 16px;
-      }
-
-      .steps {
-        counter-reset: step;
-      }
-      .step {
-        display: flex;
-        gap: 14px;
-        margin-bottom: 16px;
-        align-items: flex-start;
-      }
-      .step-number {
-        background: #7c3aed;
-        color: white;
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
+      .logo {
+        width: 32px;
+        height: 32px;
+        background: rgba(167, 139, 250, 0.15);
+        border: 0.5px solid rgba(167, 139, 250, 0.25);
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 13px;
-        font-weight: 700;
-        flex-shrink: 0;
       }
-      .step-text {
+      .logo i {
+        font-size: 16px;
+        color: #a78bfa;
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #e4e4e7;
+      }
+      .subtitle {
+        font-size: 13px;
+        color: #52525b;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 0.5px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 16px;
+      }
+
+      .card-title {
+        font-size: 12px;
+        font-weight: 500;
+        color: #52525b;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .card-title i {
         font-size: 14px;
+      }
+
+      .step {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 14px;
+        align-items: flex-start;
+      }
+
+      .step-num {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(167, 139, 250, 0.1);
+        border: 0.5px solid rgba(167, 139, 250, 0.2);
+        color: #a78bfa;
+        font-size: 11px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+
+      .step-text {
+        font-size: 13px;
+        color: #71717a;
         line-height: 1.6;
-        color: #cdd6f4;
-        padding-top: 4px;
       }
       .step-text a {
-        color: #89b4fa;
+        color: #a78bfa;
         text-decoration: none;
       }
       .step-text a:hover {
         text-decoration: underline;
       }
       .step-text code {
-        background: #313244;
-        padding: 2px 6px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        padding: 1px 7px;
         border-radius: 4px;
         font-size: 12px;
-        color: #a6e3a1;
+        color: #e4e4e7;
+        font-family: monospace;
+      }
+
+      .field {
+        margin-bottom: 18px;
+      }
+      .field:last-child {
+        margin-bottom: 0;
       }
 
       label {
         display: block;
-        font-size: 13px;
-        color: #a6adc8;
-        margin-bottom: 6px;
+        font-size: 12px;
+        color: #52525b;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
       }
 
       input,
       select,
       textarea {
         width: 100%;
-        background: #313244;
-        border: 1px solid #45475a;
+        background: rgba(255, 255, 255, 0.04);
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
         border-radius: 8px;
-        color: #cdd6f4;
-        padding: 10px 12px;
-        font-size: 14px;
+        color: #e4e4e7;
+        padding: 10px 14px;
+        font-size: 13px;
         outline: none;
+        font-family: inherit;
         transition: border-color 0.2s;
       }
+
       input:focus,
       select:focus,
       textarea:focus {
-        border-color: #cba6f7;
-      }
-      textarea {
-        resize: vertical;
-        min-height: 100px;
-        font-family: inherit;
-        line-height: 1.5;
+        border-color: rgba(167, 139, 250, 0.4);
       }
 
-      .field {
-        margin-bottom: 16px;
+      select option {
+        background: #1c1c1e;
       }
-      .hint {
-        font-size: 12px;
-        color: #6c7086;
-        margin-top: 4px;
+
+      textarea {
+        resize: vertical;
+        min-height: 110px;
+        line-height: 1.6;
       }
 
       .api-key-wrapper {
@@ -140,107 +184,136 @@
       }
       .api-key-wrapper input {
         padding-right: 80px;
+        font-family: monospace;
       }
-      .toggle-visibility {
+
+      .toggle-btn {
         position: absolute;
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
         background: none;
         border: none;
-        color: #a6adc8;
+        color: #52525b;
         cursor: pointer;
         font-size: 12px;
+        font-family: inherit;
       }
 
-      .btn-save {
-        background: #7c3aed;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 15px;
-        font-weight: 600;
-        width: 100%;
-        transition: background 0.2s;
-      }
-      .btn-save:hover {
-        background: #6d28d9;
-      }
-
-      .status {
-        text-align: center;
-        margin-top: 12px;
-        font-size: 14px;
-        min-height: 20px;
-      }
-      .status.success {
-        color: #a6e3a1;
-      }
-      .status.error {
-        color: #f38ba8;
+      .hint {
+        font-size: 12px;
+        color: #3f3f46;
+        margin-top: 6px;
       }
 
       .key-status {
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 13px;
-        margin-bottom: 12px;
+        font-size: 12px;
+        color: #52525b;
+        margin-bottom: 16px;
         padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 0.5px solid rgba(255, 255, 255, 0.06);
         border-radius: 8px;
-        background: #313244;
       }
+
       .dot {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         border-radius: 50%;
-        background: #f38ba8;
+        background: #3f3f46;
+        flex-shrink: 0;
       }
       .dot.ok {
-        background: #a6e3a1;
+        background: #6ee7b7;
+        box-shadow: 0 0 6px rgba(110, 231, 183, 0.4);
+      }
+
+      .btn-save {
+        width: 100%;
+        padding: 12px;
+        background: rgba(167, 139, 250, 0.1);
+        border: 0.5px solid rgba(167, 139, 250, 0.25);
+        border-radius: 9px;
+        color: #a78bfa;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .btn-save:hover {
+        background: rgba(167, 139, 250, 0.18);
+      }
+
+      .status {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 13px;
+        min-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .status.success {
+        color: #6ee7b7;
+      }
+      .status.error {
+        color: #f87171;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>⚙️ Udemy Transcription Helper</h1>
-      <p class="subtitle">Configure your extension in 1 minute</p>
+      <div class="header">
+        <div class="header-top">
+          <div class="logo"><i class="ti ti-sparkles"></i></div>
+          <h1>Udemy Transcription Helper</h1>
+        </div>
+        <p class="subtitle">Configure your extension below</p>
+      </div>
 
       <!-- Guide -->
       <div class="card">
-        <h2>🔑 How to get your free Groq API key</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-text">
-              Go to
-              <a href="https://console.groq.com/keys" target="_blank"
-                >console.groq.com/keys</a
-              >
-              and sign in (free account)
-            </div>
+        <div class="card-title">
+          <i class="ti ti-key"></i> Get your free Groq API key
+        </div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            Go to
+            <a href="https://console.groq.com/keys" target="_blank"
+              >console.groq.com</a
+            >
+            and create a free account
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-text">
-              Click <code>Create API Key</code> → give it a name → copy the
-              generated key
-            </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            Click <code>API Keys</code> → <code>Create API Key</code> → copy it
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-text">
-              Paste the key below and click <code>Save</code> — that's it! 🎉
-            </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            Paste it below and click <code>Save</code> — done!
           </div>
         </div>
       </div>
 
-      <!-- API Key -->
+      <!-- Clé API -->
       <div class="card">
-        <h2>🤖 Your Groq API Key</h2>
+        <div class="card-title"><i class="ti ti-robot"></i> Groq API key</div>
 
         <div class="key-status">
           <div class="dot" id="key-dot"></div>
@@ -251,20 +324,20 @@
           <label>API Key</label>
           <div class="api-key-wrapper">
             <input type="password" id="apiKey" placeholder="gsk_..." />
-            <button class="toggle-visibility" id="toggle-key">Show</button>
+            <button class="toggle-btn" id="toggle-key">Show</button>
           </div>
-          <p class="hint">
-            Your key is stored locally on your device and never shared.
-          </p>
+          <p class="hint">Stored locally on your device. Never shared.</p>
         </div>
       </div>
 
-      <!-- AI Settings -->
+      <!-- Réglages IA -->
       <div class="card">
-        <h2>✨ Summary Settings</h2>
+        <div class="card-title">
+          <i class="ti ti-adjustments"></i> Summary settings
+        </div>
 
         <div class="field">
-          <label>Summary language</label>
+          <label>Language</label>
           <select id="language">
             <option value="english">English</option>
             <option value="français">Français</option>
@@ -278,15 +351,16 @@
           <label>Custom prompt</label>
           <textarea
             id="customPrompt"
-            placeholder="Ex: Summarize in 5 key points with concrete examples..."
+            placeholder="e.g. Summarize in 5 key points with concrete examples..."
           ></textarea>
-          <p class="hint">
-            The instruction sent to Groq to summarize the transcription.
-          </p>
+          <p class="hint">The instruction given to the AI when summarizing.</p>
         </div>
       </div>
 
-      <button class="btn-save" id="btn-save">💾 Save</button>
+      <button class="btn-save" id="btn-save">
+        <i class="ti ti-device-floppy" style="font-size: 16px"></i>
+        Save settings
+      </button>
       <p class="status" id="status"></p>
     </div>
     <script src="options.js"></script>
